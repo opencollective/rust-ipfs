@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: '*'
 
-name: Rust IPFS
+name: IPFS Conformance
 
 jobs:
   conformance-interface:
