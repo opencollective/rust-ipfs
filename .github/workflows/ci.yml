@@ -155,24 +155,3 @@ jobs:
 
     - name: cargo test --features nightly
       run: cargo test --features nightly
-
-  conformance-interface:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout sources
-        uses: actions/checkout@v2
-
-      - name: Cache cargo folder
-        uses: actions/cache@v1
-        with:
-          path: ~/.cargo
-          key: readme-doctest
-
-      - name: Install rust toolchain
-        uses: hecrj/setup-rust-action@v1
-        with:
-          rust-version: stable
-
-      - name: Build
-        if: matrix.platform.cross == false
-        run: cargo build --workspace
